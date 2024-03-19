@@ -1,3 +1,4 @@
+import { utilService } from "./util.service.js";
 const BASE_URL = "/api/bug/";
 
 export const bugService = {
@@ -7,25 +8,11 @@ export const bugService = {
   remove,
   getEmptyBug,
   getDefaultFilter,
+  getFilterFromParams,
 };
 
-function query(filterBy = {}) {
-  return axios
-    .get(BASE_URL)
-    .then((res) => res.data)
-    .then((bugs) => {
-      if (filterBy.txt) {
-        const regExp = new RegExp(filterBy.txt, "i");
-        bugs = bugs.filter(
-          (bug) => regExp.test(bug.title) || regExp.test(bug.description)
-        );
-      }
-
-      if (filterBy.severity) {
-        bugs = bugs.filter((bug) => bug.severity >= filterBy.severity);
-      }
-      return bugs;
-    });
+function query(filterBy = getDefaultFilter()) {
+  return axios.get(BASE_URL, { params: filterBy }).then((res) => res.data);
 }
 
 function get(bugId) {
@@ -37,23 +24,30 @@ function get(bugId) {
     });
 }
 function remove(bugId) {
-  return axios.get(BASE_URL + bugId + "/remove").then((res) => res.data);
+  return axios.delete(BASE_URL + bugId).then((res) => res.data);
 }
 
 function save(bug) {
-  // const url = BASE_URL + "save";
-
-  // const { title, description, severity } = bug;
-  // const queryParams = { title, description, severity };
-
-  if (bug._id) return axios.put(BASE_URL, bug);
-  else axios.post(BASE_URL, bug);
+  if (bug._id) {
+    return axios.put(BASE_URL, bug);
+  } else {
+    return axios.post(BASE_URL, bug);
+  }
 }
 
 function getEmptyBug() {
-  return { title: "", description: "", severity: 5 };
+  return { title: "", description: "", severity: "4" };
 }
 
 function getDefaultFilter() {
-  return { txt: "", severity: "" };
+  return { txt: "", severity: "", description: "" };
+}
+
+function getFilterFromParams(searchParams = {}) {
+  const defaultFilter = getDefaultFilter();
+  return {
+    txt: searchParams.get("txt") || defaultFilter.txt,
+    severity: searchParams.get("severity") || defaultFilter.severity,
+    description: searchParams.get("description") || defaultFilter.description,
+  };
 }

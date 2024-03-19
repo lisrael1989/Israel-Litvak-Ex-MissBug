@@ -7,15 +7,15 @@ export function BugFilter({ filterBy, onSetFilter }) {
     onSetFilter(filterByToEdit);
   }, [filterByToEdit]);
 
-  function handleChange({ target }) {
-    const field = target.name;
-    const value = target.type === "number" ? +target.value || "" : target.value;
-    setFilterByToEdit((prevFilterBy) => ({ ...prevFilterBy, [field]: value }));
-  }
-
   function onSubmitFilter(ev) {
     ev.preventDefault();
     onSetFilter(filterByToEdit);
+  }
+
+  function handleChange({ target }) {
+    let { value, name: field, type } = target;
+    if (type === "number") value = +value;
+    setFilterByToEdit((prevFilterBy) => ({ ...prevFilterBy, [field]: value }));
   }
 
   const { txt, severity } = filterByToEdit;
@@ -24,12 +24,12 @@ export function BugFilter({ filterBy, onSetFilter }) {
       <h2>Filter Our Bugs</h2>
 
       <form onSubmit={onSubmitFilter}>
-        <label htmlFor="txt">Title:</label>
+        <label htmlFor="title">Title:</label>
         <input
           value={txt}
           onChange={handleChange}
           name="txt"
-          id="txt"
+          id="title"
           type="text"
           placeholder="By Text"
         />

@@ -21,7 +21,7 @@ app.get("/api/bug", (req, res) => {
     pageIdx: req.query.pageIdx,
   };
   bugService
-    .query()
+    .query(filterBy)
     .then((bugs) => {
       res.send(bugs);
     })
@@ -46,8 +46,6 @@ app.post("/api/bug", (req, res) => {
 
 //Update bug
 app.put("/api/bug", (req, res) => {
-  console.log("req.query", req.body);
-
   const bugToSave = {
     _id: req.body._id,
     title: req.body.title,
@@ -83,7 +81,7 @@ app.delete("/api/bug/:id", (req, res) => {
   const bugId = req.params.id;
   bugService
     .remove(bugId)
-    .then(() => res.send(bugs))
+    .then(() => res.send(bugId))
     .catch((err) => {
       loggerService.error("Cannot save bug", err);
       res.status(400).send("Cannot get bug");
