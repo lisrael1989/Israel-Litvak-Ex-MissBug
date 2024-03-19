@@ -41,13 +41,13 @@ function remove(bugId) {
 }
 
 function save(bug) {
-  const url = BASE_URL + "save";
+  // const url = BASE_URL + "save";
 
-  const { title, description, severity } = bug;
-  const queryParams = { title, description, severity };
+  // const { title, description, severity } = bug;
+  // const queryParams = { title, description, severity };
 
-  if (bug._id) queryParams._id = bug._id;
-  return axios.get(url, { params: queryParams });
+  if (bug._id) return axios.put(BASE_URL, bug);
+  else axios.post(BASE_URL, bug);
 }
 
 function getEmptyBug() {

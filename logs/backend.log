@@ -32,3 +32,28 @@
 19.3.2024, 16:01:25 - DEBUG - req.query | {}
 19.3.2024, 16:01:31 - DEBUG - req.query | {"title":"idan","description":"problem when clicking Save","severity":"44","_id":"abc133"}
 19.3.2024, 16:01:31 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:12:23 - DEBUG - req.query | {}
+19.3.2024, 16:12:34 - DEBUG - req.query | {"title":"idan","description":"problem when clicking Save","severity":"44","_id":"abc133"}
+19.3.2024, 16:12:34 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:15:11 - DEBUG - req.query | {}
+19.3.2024, 16:15:19 - DEBUG - req.query | {"title":"idandsf","description":"fsdf","severity":"4","_id":"abc133"}
+19.3.2024, 16:15:19 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:15:27 - DEBUG - req.query | {"title":"fsfsds","description":"sdfsfsd","severity":"5"}
+19.3.2024, 16:15:27 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:17:17 - DEBUG - req.query | {"title":"fsfsds","description":"sdfsfsd","severity":"5"}
+19.3.2024, 16:17:17 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:17:54 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:17:54 - DEBUG - req.query | {"title":"bb","description":"bb","severity":"5"}
+19.3.2024, 16:20:31 - DEBUG - req.query | {"title":"bb","description":"bb","severity":"5"}
+19.3.2024, 16:20:31 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:21:51 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:21:51 - DEBUG - req.query | {"title":"bb","description":"bb","severity":"5"}
+19.3.2024, 16:23:15 - DEBUG - req.query | {}
+19.3.2024, 16:23:58 - DEBUG - req.query | {}
+19.3.2024, 16:25:07 - DEBUG - req.query | {"title":"bb","description":"bb","severity":"5"}
+19.3.2024, 16:25:07 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:28:48 - DEBUG - req.query | {}
+19.3.2024, 16:28:58 - DEBUG - req.query | {"title":"bb","description":"bbb","severity":"3","_id":"abc193"}
+19.3.2024, 16:28:58 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:29:23 - DEBUG - req.query | {}
+19.3.2024, 16:39:25 - DEBUG - req.query | {}

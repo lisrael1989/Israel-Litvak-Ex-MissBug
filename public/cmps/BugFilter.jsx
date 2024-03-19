@@ -18,17 +18,6 @@ export function BugFilter({ filterBy, onSetFilter }) {
     onSetFilter(filterByToEdit);
   }
 
-  // ! DRY!. WE WILL NEVER REPEAT OUR SELVES
-  // function handleTxtChange({ target }) {
-  //     const value = target.value
-  //     setFilterByToEdit((prevFilterBy) => ({ ...prevFilterBy, txt: value }))
-  // }
-
-  // function handleMinSpeedChange({ target }) {
-  //     const value = target.value
-  //     setFilterByToEdit((prevFilterBy) => ({ ...prevFilterBy, minSpeed: value }))
-  // }
-
   const { txt, severity } = filterByToEdit;
   return (
     <section className="bug-filter full main-layout">

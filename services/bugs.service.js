@@ -28,6 +28,7 @@ function remove(bugId) {
 }
 
 function save(bug) {
+  console.log("SAVE", bug);
   if (bug._id) {
     const bugIdx = bugs.findIndex((currBug) => currBug._id === bug._id);
     bugs[bugIdx] = { ...bugs[bugIdx], ...bug };
