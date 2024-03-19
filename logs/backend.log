@@ -9,3 +9,26 @@
 18.3.2024, 21:49:29 - ERROR - Cannot save bug | bug does not exist!
 18.3.2024, 22:01:24 - ERROR - Cannot save bug | bug does not exist!
 18.3.2024, 22:11:19 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 9:05:15 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 9:21:43 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 11:38:17 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:11:36 - DEBUG - req.query | {"title":"idan","severity":"5 ","description":"problem when clicking Save","_id":"abc133"}
+19.3.2024, 15:11:36 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:11:51 - DEBUG - req.query | {"title":"idan","severity":"3 ","description":"problem when clicking Save","_id":"abc133"}
+19.3.2024, 15:11:51 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:14:25 - DEBUG - req.query | {"title":"idan","severity":"3 ","description":"problem when clicking Save","_id":"abc133"}
+19.3.2024, 15:14:25 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:15:18 - DEBUG - req.query | {"title":"idan","severity":"3 ","description":"problem when clicking Save","_id":"abc133"}
+19.3.2024, 15:15:18 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:16:27 - DEBUG - req.query | {"title":"idan","description":"problem when clicking Save","severity":"3","_id":"abc133"}
+19.3.2024, 15:16:27 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:20:20 - DEBUG - req.query | {"title":"idan","description":"problem when clicking Save","severity":"3","_id":"abc133"}
+19.3.2024, 15:20:20 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 15:55:14 - DEBUG - req.query | {"title":"israel","description":"hello","severity":"55"}
+19.3.2024, 15:55:14 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:01:05 - DEBUG - req.query | {}
+19.3.2024, 16:01:15 - DEBUG - req.query | {"title":"aasda","description":"dsadas","severity":"5"}
+19.3.2024, 16:01:15 - ERROR - Cannot save bug | bug does not exist!
+19.3.2024, 16:01:25 - DEBUG - req.query | {}
+19.3.2024, 16:01:31 - DEBUG - req.query | {"title":"idan","description":"problem when clicking Save","severity":"44","_id":"abc133"}
+19.3.2024, 16:01:31 - ERROR - Cannot save bug | bug does not exist!

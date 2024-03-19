@@ -1,21 +1,16 @@
-const {NavLink} = ReactRouterDOM
-const {useEffect} = React
+const { Link, NavLink } = ReactRouterDOM;
 
-import {UserMsg} from './UserMsg.jsx'
-
-export function AppHeader() {
-  useEffect(() => {
-    // component did mount when dependancy array is empty
-  }, [])
-
+export function AppHeader({ onSetPage }) {
   return (
-    <header>
-      <UserMsg />
-      <nav>
-        <NavLink to="/">Home</NavLink> |<NavLink to="/bug">Bugs</NavLink> |
-        <NavLink to="/about">About</NavLink>
-      </nav>
-      <h1>Bugs are Forever</h1>
+    <header className="app-header full main-layout">
+      <div className="header-container">
+        <h1>React Bug App</h1>
+        <nav className="app-nav">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/bug">Bugs</NavLink>
+        </nav>
+      </div>
     </header>
-  )
+  );
 }

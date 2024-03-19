@@ -1,36 +1,50 @@
-const { useState, useEffect } = React;
-const { Link, useParams } = ReactRouterDOM;
-import { utilService } from "../services/util.service.js";
 import { bugService } from "../services/bug.service.js";
 import { showErrorMsg } from "../services/event-bus.service.js";
 
+const { useEffect, useState } = React;
+const { useParams, useNavigate } = ReactRouterDOM;
+
 export function BugDetails() {
   const [bug, setBug] = useState(null);
-  const { bugId } = useParams();
+  const params = useParams();
+  const navigate = useNavigate();
+  console.log("params:", params);
 
   useEffect(() => {
-    bugService
-      .getById(bugId)
-      .then((bug) => {
-        setBug(bug);
-      })
-      .catch((err) => {
-        showErrorMsg("Cannot load bug");
-      });
+    loadBug();
   }, []);
 
-  if (!bug) return <h1>loadings....</h1>;
+  function loadBug() {
+    bugService
+      .get(params.bugId)
+      .then(setBug)
+      .catch((err) => {
+        // showErrorMsg('You have reached your maximum bug count. consider subscribing...')
+        console.log("Had issued in bug details:", err);
+        navigate("/bug");
+      });
+  }
+
+  function onBack() {
+    navigate("/bug");
+    // navigate(-1)
+  }
+
+  if (!bug) return <div>Loading...</div>;
   return (
-    bug && (
-      <div>
-        <h3>Bug Details 🐛</h3>
-        <h4>{bug.title}</h4>
-        <p>{bug.description}</p>
-        <p>
-          Severity: <span>{bug.severity}</span>
-        </p>
-        <Link to="/bug">Back to List</Link>
-      </div>
-    )
+    <section className="bug-details">
+      <h2>Bug Title: {bug.title}</h2>
+      <h4>Description: {bug.description}</h4>
+      <h4>Severity: {bug.severity}</h4>
+      <h1>🐛</h1>
+      {/* <img src={`../assets/img/audu.png`} alt="" /> */}
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, velit
+        reiciendis sed optio eum saepe! Aliquid necessitatibus atque est quasi
+        unde odit voluptate! Vero, dolor sunt molestiae possimus labore
+        suscipit?
+      </p>
+      <button onClick={onBack}>Back</button>
+    </section>
   );
 }
