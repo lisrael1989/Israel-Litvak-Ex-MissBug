@@ -1,12 +1,12 @@
 import express from "express";
 import { bugService } from "./services/bugs.service.js";
 import { loggerService } from "./services/logger.service.js";
-// import cookieParser from "cookie-parser";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 app.use(express.static("public"));
-// app.use(cookieParser())
+app.use(cookieParser());
 
 /*get bugs */
 app.get("/api/bug", (req, res) => {
@@ -40,7 +40,6 @@ app.get("/api/bug/save", (req, res) => {
     severity: +req.query.severity,
     description: req.query.description,
     _id: req.query._id,
-    createdAt: req.query.createdAt,
   };
   bugService
     .save(bugToSave)
