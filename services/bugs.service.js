@@ -15,8 +15,8 @@ const bugs = utilService.readJsonFile("data/bug.json");
 
 function query(filterBy) {
   let bugsToReturn = bugs;
-  if (filterBy.title) {
-    const regex = new RegExp(filterBy.title, "i");
+  if (filterBy.txt) {
+    const regex = new RegExp(filterBy.txt, "i");
     bugsToReturn = bugsToReturn.filter((bug) => regex.test(bug.title));
   }
   if (filterBy.severity) {
@@ -57,7 +57,7 @@ function save(bug) {
   } else {
     bug._id = utilService.makeId();
     bug.createdAt = Date.now();
-    // bug.description = utilService.makeLorem();
+    bug.description = utilService.makeLorem();
     bugs.unshift(bug);
   }
   return _saveBugsToFile().then(() => bug);

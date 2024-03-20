@@ -15,8 +15,8 @@ app.use(express.json());
 app.get("/api/bug", (req, res) => {
   console.log("req.query:", req.query);
   const filterBy = {
-    title: req.query.title || "",
-    description: req.query.description || "",
+    txt: req.query.txt || "",
+    // description: req.query.description || "",
     severity: +req.query.severity || 0,
     pageIdx: req.query.pageIdx,
   };
